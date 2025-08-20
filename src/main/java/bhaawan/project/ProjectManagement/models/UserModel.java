@@ -7,18 +7,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserModel {
 
     @Id
-    private long id;
+    private String id;
 
     private String userName;
     private String email;
     private String password;
-    private Boolean profileVerified;
+    private Boolean profileVerified=false;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
