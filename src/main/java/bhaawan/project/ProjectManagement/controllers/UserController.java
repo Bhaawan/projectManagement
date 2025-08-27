@@ -1,5 +1,6 @@
 package bhaawan.project.ProjectManagement.controllers;
 
+import bhaawan.project.ProjectManagement.dto.LoginRequestDTO;
 import bhaawan.project.ProjectManagement.models.UserModel;
 import bhaawan.project.ProjectManagement.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,10 @@ public class UserController {
         userService.registerUser(user);
     }
 
-
+    @PostMapping("/auth/login")
+    public String loginUser(@RequestBody LoginRequestDTO login){
+        String token=userService.loginUser(login);
+        return token;
+    }
 
 }

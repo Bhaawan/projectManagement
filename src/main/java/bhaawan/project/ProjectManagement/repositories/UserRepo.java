@@ -6,4 +6,7 @@
 
     @Repository
     public interface UserRepo extends MongoRepository<UserModel, String> {
+
+        public UserModel findByEmail(String email);
+
     }
